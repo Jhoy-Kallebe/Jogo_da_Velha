@@ -29,8 +29,9 @@ html {
 }
 
 .head-game .info p:nth-child(2){
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;
     text-align: center;
-    font-weight: 400;
 }
 
 .main-game {
@@ -93,16 +94,13 @@ html {
 
 .main-game .container-game .space-check {
     font-family: 'Fredoka One', cursive;
+    font-size: 45px;
     width: 100px;
     height: 100px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.main-game .container-game .space-check p {
-    font-size: 45px;
 }
 
 
