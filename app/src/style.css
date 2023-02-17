@@ -26,6 +26,7 @@ html {
     padding-bottom: 20px;
     font-weight: 600;
     letter-spacing: 2px;
+    transition: .3s;
 }
 
 .head-game .info p:nth-child(2){
@@ -126,4 +127,17 @@ html {
 
 .main-game .controls .icons:hover {
     transform: scale(1.1);
+}
+
+@keyframes animationNamePlayer {
+    0% {
+        transform: translateY(0) scale(1.1);
+        font-weight: 800;
+    }
+    50% {
+        transform: translateY(-3px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1.1);
+    }
 }
