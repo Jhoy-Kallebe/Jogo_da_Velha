@@ -4,11 +4,11 @@ const playerOne = document.querySelector('.one');
 const playerTwo = document.querySelector('.two');
 const scoreboard = document.querySelector('.scoreboard');
 
-playerOne.value = 'Fulano';
-playerTwo.value = 'Ciclano';
+const body = document.querySelector('.body');
+const form = document.querySelector('.log-game');
 
-playerOne.innerText = playerOne.value;
-playerTwo.innerText = playerTwo.value;
+const namePlayerOne = document.querySelector('#player-one');
+const namePlayerTwo = document.querySelector('#player-two');
 
 let player = playerOne;
 let scoreboardOne = 0;
@@ -25,7 +25,15 @@ arrayCheckSpace.forEach((v, index) => {
     });
 });
 
-loadGame();
+function playGame() {
+    loadGame();
+    playerOne.value = namePlayerOne.value;
+    playerTwo.value = namePlayerTwo.value;
+    playerOne.innerText = playerOne.value ?? 'Fulano';
+    playerTwo.innerText = playerTwo.value ?? 'Ciclano';
+    body.classList.toggle('form');
+    form.classList.toggle('active-form');
+}
 
 function loadGame() {
     arrayCheckSpace.forEach((v, index) => {
@@ -52,13 +60,13 @@ function checkSpace(index) {
         if(player == playerOne) {
             arrayChecks[index] = 'X'
             loadGame();
-            playWin(playerOne, 'X')
             changePlayer(playerOne, playerTwo);
+            playWin(playerOne, 'X')            
         } else {
             arrayChecks[index] = 'O'
             loadGame();
+            changePlayer(playerTwo, playerOne);
             playWin(playerTwo, 'O');
-            changePlayer(playerTwo, playerOne)
         }
     }
 }

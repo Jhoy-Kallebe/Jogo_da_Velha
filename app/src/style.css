@@ -17,6 +17,69 @@ html {
     flex-direction: column;
 }
 
+.form::before {
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.log-game {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.active-form {
+    display: flex;
+}
+
+.log-game input:not(:nth-child(3)) {
+    height: 30px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 99px;
+    border: 1px solid;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: transparent;
+    outline: none;
+    transition: .3s;
+}
+
+.log-game input:not(:nth-child(3)):focus {
+    border: 1px solid rgb(221, 160, 221);
+}
+
+.log-game .button {
+    height: 45px;
+    width: 120px;
+    margin: 20px auto 0 auto;
+    color: #252525;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+}
+
 .head-game {
     display: flex;
     justify-content: space-between;

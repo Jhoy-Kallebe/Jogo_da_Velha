@@ -8,14 +8,19 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body form">
+    <div class="log-game active-form">
+        <input type="text" name="" id="player-one" class="name-players" placeholder="Player 1" required>
+        <input type="text" name="" id="player-two" class="name-players" placeholder="Player 2" required>
+        <input class="button" type="button" value="Play" onclick="playGame()">
+    </div>
     <div class="game">
         <div class="head-game">
             <div class="info">
                 <p class="player one">Fulano</p>
                 <p class="sybol-one">X</p>
             </div>
-            <p class="scoreboard">1 X 0</p>
+            <p class="scoreboard">0 X 0</p>
             <div class="info">
                 <p class="player two">Ciclano</p>
                 <p class="sybol-two">O</p>
@@ -44,7 +49,7 @@
                 <div class="space-check">X</div>
             </div>
             <div class="controls">
-                <a href=""><ion-icon class="icons" name="arrow-back-circle-outline"></ion-icon></a>
+                <a onclick="playGame()" href=""><ion-icon class="icons" name="arrow-back-circle-outline"></ion-icon></a>
                 <a onclick="resetGame()"><ion-icon class="icons" name="refresh-circle-outline"></ion-icon></a>
             </div>
         </div>
