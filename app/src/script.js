@@ -13,6 +13,7 @@ playerTwo.innerText = playerTwo.value;
 let player = playerOne;
 let scoreboardOne = 0;
 let scoreboardTwo = 0;
+let gameWin = '';
 
 let arrayChecks = ['', '', '', 
                    '', '', '', 
@@ -24,38 +25,41 @@ arrayCheckSpace.forEach((v, index) => {
     });
 });
 
+loadGame();
+
 function loadGame() {
     arrayCheckSpace.forEach((v, index) => {
         arrayCheckSpace[index].innerText = arrayChecks[index];
     });
     changePlayer(playerTwo, playerOne);
+    loadScoreboard();
 }
 
 function loadScoreboard () {
     scoreboard.innerText = `${scoreboardOne} X ${scoreboardTwo}`;
 }
 
-loadGame();
-loadScoreboard();
-
 function resetGame(){
     arrayChecks.forEach((v, index) => {
         arrayChecks[index] = '';
     });
     loadGame();
+    gameWin = '';
 }
 
 function checkSpace(index) {
-    if(player == playerOne) {
-        arrayChecks[index] = 'X'
-        loadGame();
-        playWin(playerOne, 'X')
-        changePlayer(playerOne, playerTwo);
-    } else {
-        arrayChecks[index] = 'O'
-        loadGame();
-        playWin(playerTwo, 'O');
-        changePlayer(playerTwo, playerOne)
+    if(arrayChecks[index] == '' && gameWin == ''){
+        if(player == playerOne) {
+            arrayChecks[index] = 'X'
+            loadGame();
+            playWin(playerOne, 'X')
+            changePlayer(playerOne, playerTwo);
+        } else {
+            arrayChecks[index] = 'O'
+            loadGame();
+            playWin(playerTwo, 'O');
+            changePlayer(playerTwo, playerOne)
+        }
     }
 }
 
@@ -66,5 +70,77 @@ function changePlayer(playerNow, nextPlayer){
 }
 
 function playWin(player, sybol) {
-    
+    winColumnOne(player, sybol);    
+    winColumnTwo(player, sybol);
+    winColumnThree(player, sybol);    
+    winRowOne(player, sybol);
+    winRowTwo(player, sybol);
+    winRowThree(player, sybol);
+    winCrossOne(player, sybol);
+    winCrossTwo(player, sybol);
+
+    if(gameWin == playerOne.value) {
+        scoreboardOne++;
+        resetGame();
+    }
+    if (gameWin == playerTwo.value) {
+        scoreboardTwo++;
+        resetGame();
+    }
+}
+
+function winColumnOne(player, sybol) {
+    if(arrayChecks[0] == sybol && arrayChecks[3] == sybol && arrayChecks[6] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}    
+
+function winColumnTwo(player, sybol){
+    if(arrayChecks[1] == sybol && arrayChecks[4] == sybol && arrayChecks[7] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winColumnThree(player, sybol) {
+    if(arrayChecks[2] == sybol && arrayChecks[5] == sybol && arrayChecks[8] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winRowOne(player, sybol) {
+    if(arrayChecks[0] == sybol && arrayChecks[1] == sybol && arrayChecks[2] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winRowTwo(player, sybol) {
+    if(arrayChecks[3] == sybol && arrayChecks[4] == sybol && arrayChecks[5] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winRowThree(player, sybol) {
+    if(arrayChecks[6] == sybol && arrayChecks[7] == sybol && arrayChecks[8] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winCrossOne(player, sybol) {
+    if(arrayChecks[0] == sybol && arrayChecks[4] == sybol && arrayChecks[8] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
+}
+
+function winCrossTwo(player, sybol) {
+    if(arrayChecks[2] == sybol && arrayChecks[4] == sybol && arrayChecks[6] == sybol) {
+        alert(player.value+' ganhou!');
+        gameWin = player.value;
+    }
 }
