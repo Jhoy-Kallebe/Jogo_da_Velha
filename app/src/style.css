@@ -192,6 +192,46 @@ html {
     transform: scale(1.1);
 }
 
+
+/*##############  INTERFACE PLAYER WIN  ###############*/
+
+
+.win-game {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    font-size: 22px;
+    top: -100%;
+    transition: all .3s;
+}
+
+.active {
+    top: 40%;
+}
+
+.win-game .controls .icons {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.win-game .controls .icons:hover {
+    transform: scale(1.1);
+}
+
 @keyframes animationNamePlayer {
     0% {
         transform: translateY(0) scale(1.1);
