@@ -16,6 +16,7 @@ let player = playerOne;
 let scoreboardOne = 0;
 let scoreboardTwo = 0;
 let gameWin = '';
+let gameOk = false;
 
 let arrayChecks = ['', '', '', 
                    '', '', '', 
@@ -28,13 +29,14 @@ arrayCheckSpace.forEach((v, index) => {
 });
 
 function playGame() {
-    loadGame();
-    playerOne.value = namePlayerOne.value;
-    playerTwo.value = namePlayerTwo.value;
-    playerOne.innerText = playerOne.value ?? 'Fulano';
-    playerTwo.innerText = playerTwo.value ?? 'Ciclano';
-    body.classList.toggle('form');
-    form.classList.toggle('active-form');
+    verifyNamePlayers();
+    if(gameOk) {
+        loadGame();
+        playerOne.innerText = playerOne.value ?? 'Fulano';
+        playerTwo.innerText = playerTwo.value ?? 'Ciclano';
+        body.classList.toggle('form');
+        form.classList.toggle('active-form');
+    }
 }
 
 function loadGame() {
@@ -73,6 +75,15 @@ function playerWinnerGame() {
     body.classList.toggle('form');
     winGame.classList.toggle('active');
     playerWinner.innerText = `${gameWin} ganhou!`
+}
+
+function verifyNamePlayers() {
+    if(namePlayerOne.value !== namePlayerTwo.value && namePlayerOne.value !== '' && namePlayerTwo.value !== '') {
+        playerOne.value = namePlayerOne.value;
+        playerTwo.value = namePlayerTwo.value;
+
+        gameOk = true;
+    }
 }
 
 function checkSpace(index) {
