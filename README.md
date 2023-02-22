@@ -15,9 +15,13 @@
 ### Ajustes e melhorias
 Projeto concluído na data 29/06/2022:
 
-- [x] Wireframe
 - [x] Front-end
+  - [x] HTML
+    - [x] Desenvolver o layout do jogo
+  - [x] CSS
 - [x] Back-end
+  - [x] Funcionalidades básicas do jogo
+  - [x] Animação player name
 
 ### 🤝 Colaboradores
 
