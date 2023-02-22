@@ -13,7 +13,7 @@
 
 > Projeto desenvolvido com intuito de aprimorar minhas habilidades com a linguagem JavaScript.
 ### Ajustes e melhorias
-Projeto concluído na data 29/06/2022:
+Projeto concluído na data 18/02/2023:
 
 - [x] Front-end
   - [x] HTML
