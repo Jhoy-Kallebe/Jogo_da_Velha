@@ -42,7 +42,7 @@ Projeto concluído na data 18/02/2023:
   </tr>
 </table>
 
-### 📝 Licese
+### 📝 License
 
 MIT
 
